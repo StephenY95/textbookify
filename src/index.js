@@ -1,5 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import { Route, Link, BrowserRouter as Router } from "react-router-dom";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+import App from "./App";
+import LoginPage from "./components/auth/LoginPage";
+
+const routing = (
+  <Router>
+    <div>
+      <Route exact path="/" component={App} />
+      <Route path="/login" component={LoginPage} />
+    </div>
+  </Router>
+);
+
+ReactDOM.render(routing, document.getElementById("root"));
